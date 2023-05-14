@@ -634,6 +634,7 @@ void load_carte(SDL_Renderer *renderer,
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
         // return EXIT_FAILURE;
     }
+
     SDL_Rect maison;
     maison.x = 710;
     maison.y = 0;
@@ -712,25 +713,25 @@ void load_carte(SDL_Renderer *renderer,
         // return EXIT_FAILURE;
     }
 
-    // grand feu 1
-    SDL_Rect dff = {441, 261, 30, 90};
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &dff);
+    // // grand feu 1
+    // SDL_Rect dff = {441, 261, 30, 90};
+    // SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    // SDL_RenderFillRect(renderer, &dff);
 
-    // grand feu 2
-    SDL_Rect bfbf = {441, 540, 30, 90};
-    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    SDL_RenderFillRect(renderer, &bfbf);
+    // // grand feu 2
+    // SDL_Rect bfbf = {441, 540, 30, 90};
+    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    // SDL_RenderFillRect(renderer, &bfbf);
 
-    // grand feu 3
-    SDL_Rect bfba = {660, 540, 30, 90};
-    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    SDL_RenderFillRect(renderer, &bfba);
+    // // grand feu 3
+    // SDL_Rect bfba = {660, 540, 30, 90};
+    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    // SDL_RenderFillRect(renderer, &bfba);
 
-    // grand feu 4
-    SDL_Rect bfbp = {660, 261, 30, 90};
-    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    SDL_RenderFillRect(renderer, &bfbp);
+    // // grand feu 4
+    // SDL_Rect bfbp = {660, 261, 30, 90};
+    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    // SDL_RenderFillRect(renderer, &bfbp);
 
     SDL_RenderPresent(renderer);
     SDL_FreeSurface(surface);

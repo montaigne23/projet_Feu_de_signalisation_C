@@ -7,6 +7,7 @@
         "stdlib.h": "c",
         "test.h": "c",
         "carte.h": "c",
-        "feu_de_signalisation.h": "c"
+        "feu_de_signalisation.h": "c",
+        "voiture.h": "c"
     }
 }

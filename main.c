@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <customs/test.h>
 #include <customs/carte.h>
+#include <customs/voiture.h>
 #include <customs/feu_de_signalisation1.h>
 #include <customs/feu_de_signalisation2.h>
 #include <SDL2/SDL_mixer.h>
@@ -17,8 +18,8 @@ int main(int argc, char *argv[])
 {
     printf("%d", pui);
     SDL_Window *window = NULL;
-    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *cadre4 = NULL;
-    SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL;
+    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture=NULL, *cadre4 = NULL;
+    SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV = NULL;
     size_t G;
     SDL_Renderer *renderer = NULL;
 
@@ -112,7 +113,7 @@ int main(int argc, char *argv[])
     cadre2 = SDL_LoadBMP("image/maison2.bmp");
     cadre3 = SDL_LoadBMP("image/arbre.bmp");
     cadre4 = SDL_LoadBMP("image/hopit.bmp");
-
+    voiture = SDL_LoadBMP("image/img4.bmp");
     load_carte(renderer,
                surface,
                cadre1,
@@ -144,7 +145,7 @@ int main(int argc, char *argv[])
                 break;
             }
         }
-
+        voiture_(renderer, 100, 100, voiture, testureV, 0,0,0,0);
         feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55);
         feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55);
         feu_de_signalisation2(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0);
