@@ -3,7 +3,8 @@
 #include <SDL2/SDL.h>
 #include <customs/test.h>
 #include <customs/carte.h>
-#include <customs/feu_de_signalisation.h>
+#include <customs/feu_de_signalisation1.h>
+#include <customs/feu_de_signalisation2.h>
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_image.h>
 
@@ -124,7 +125,8 @@ int main(int argc, char *argv[])
                texture5);
 
     /*******************************************************************************************************************************************/
-
+    // int *d1 = 0;
+    // int *d2 = 0;
     SDL_bool u = SDL_TRUE;
     while (u)
     {
@@ -142,15 +144,15 @@ int main(int argc, char *argv[])
                 break;
             }
         }
-        while (1)
-        {
-            feu_de_signalisation(renderer, 219, 1);
-            feu_de_signalisation(renderer, 1, 1);
-            feu_de_signalisation(renderer, 1, 280);
-            feu_de_signalisation(renderer, 219, 280);
-        }
+        SDL_Delay(1000);
 
- 
+        feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55);
+        feu_de_signalisation1(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0);
+        feu_de_signalisation2(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55);
+        feu_de_signalisation2(renderer, 219, 280, 90, 30, 0, 0, 0, 0, 0, 0);
+        
+        // d1++;
+        // d2++;
     }
     SDL_FreeSurface(surface);
     SDL_FreeSurface(cadre1);
