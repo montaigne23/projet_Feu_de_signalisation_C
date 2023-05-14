@@ -6,6 +6,7 @@
         "sdl_image.h": "c",
         "stdlib.h": "c",
         "test.h": "c",
-        "carte.h": "c"
+        "carte.h": "c",
+        "feu_de_signalisation.h": "c"
     }
 }

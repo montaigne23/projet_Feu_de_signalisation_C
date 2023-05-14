@@ -9,7 +9,6 @@ void load_carte(SDL_Renderer *renderer,
                 SDL_Surface *cadre2,
                 SDL_Surface *cadre3,
                 SDL_Surface *cadre4,
-                SDL_Texture *texture,
                 SDL_Texture *texture2,
                 SDL_Texture *texture3,
                 SDL_Texture *texture4,
@@ -593,17 +592,16 @@ void load_carte(SDL_Renderer *renderer,
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderFillRect(renderer, &GO);
 
-    cadre1 = SDL_LoadBMP("../../../image/PARC.bmp");
     if (cadre1 == NULL)
     {
         fprintf(stderr, "erreur PARC : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     texture2 = SDL_CreateTextureFromSurface(renderer, cadre1);
     if (texture2 == NULL)
     {
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     SDL_Rect parc;
     parc.x = 0;
@@ -612,7 +610,7 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_QueryTexture(texture2, NULL, NULL, &parc.w, &parc.h) != 0)
     {
         fprintf(stderr, "erreur query : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     parc.h = 300;
     parc.w = 420;
@@ -620,22 +618,21 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_RenderCopy(renderer, texture2, NULL, &parc) != 0)
     {
         fprintf(stderr, "erreur copy : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //  return EXIT_FAILURE;
     }
 
     // deuxieme image
 
-    cadre2 = SDL_LoadBMP("../../../image/maison2.bmp");
     if (cadre2 == NULL)
     {
         fprintf(stderr, "erreur PARC : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //   return EXIT_FAILURE;
     }
     texture3 = SDL_CreateTextureFromSurface(renderer, cadre2);
     if (texture3 == NULL)
     {
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     SDL_Rect maison;
     maison.x = 710;
@@ -644,7 +641,7 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_QueryTexture(texture3, NULL, NULL, &maison.w, &maison.h) != 0)
     {
         fprintf(stderr, "erreur query : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //  return EXIT_FAILURE;
     }
     maison.h = 300;
     maison.w = 490;
@@ -652,20 +649,19 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_RenderCopy(renderer, texture3, NULL, &maison) != 0)
     {
         fprintf(stderr, "erreur copy : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
 
-    cadre3 = SDL_LoadBMP("../../../image/arbre.bmp");
     if (cadre3 == NULL)
     {
         fprintf(stderr, "erreur PARC : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //  return EXIT_FAILURE;
     }
     texture4 = SDL_CreateTextureFromSurface(renderer, cadre3);
     if (texture4 == NULL)
     {
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     SDL_Rect arbuste;
     arbuste.x = -30;
@@ -674,7 +670,7 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_QueryTexture(texture4, NULL, NULL, &arbuste.w, &arbuste.h) != 0)
     {
         fprintf(stderr, "erreur query : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //  return EXIT_FAILURE;
     }
     arbuste.h = 250;
     arbuste.w = 450;
@@ -682,22 +678,21 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_RenderCopy(renderer, texture4, NULL, &arbuste) != 0)
     {
         fprintf(stderr, "erreur copy : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
 
     // quatrieme image
 
-    cadre4 = SDL_LoadBMP("../../../image/hopit.bmp");
     if (cadre4 == NULL)
     {
         fprintf(stderr, "erreur PARC : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     texture5 = SDL_CreateTextureFromSurface(renderer, cadre4);
     if (texture5 == NULL)
     {
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
     SDL_Rect hospital;
     hospital.x = 710;
@@ -706,7 +701,7 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_QueryTexture(texture5, NULL, NULL, &hospital.w, &hospital.h) != 0)
     {
         fprintf(stderr, "erreur query : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        //   return EXIT_FAILURE;
     }
     hospital.h = 210;
     hospital.w = 490;
@@ -714,7 +709,7 @@ void load_carte(SDL_Renderer *renderer,
     if (SDL_RenderCopy(renderer, texture5, NULL, &hospital) != 0)
     {
         fprintf(stderr, "erreur copy : %s", SDL_GetError());
-        return EXIT_FAILURE;
+        // return EXIT_FAILURE;
     }
 
     // grand feu 1
@@ -738,4 +733,13 @@ void load_carte(SDL_Renderer *renderer,
     SDL_RenderFillRect(renderer, &bfbp);
 
     SDL_RenderPresent(renderer);
+    SDL_FreeSurface(surface);
+    SDL_FreeSurface(cadre1);
+    SDL_FreeSurface(cadre2);
+    SDL_FreeSurface(cadre3);
+    SDL_FreeSurface(cadre4);
+    SDL_DestroyTexture(texture2);
+    SDL_DestroyTexture(texture3);
+    SDL_DestroyTexture(texture4);
+    SDL_DestroyTexture(texture5);
 }
