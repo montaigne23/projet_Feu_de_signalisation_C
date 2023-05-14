@@ -20,7 +20,7 @@ int feu_de_signalisation1(SDL_Renderer *renderer, int x, int y, int h, int l, in
         SDL_RenderPresent(renderer);
         p1++;
     }
-    else if (p1 > 15 & p1 <= 20)
+    else if (p1 > 15 & p1 <= 21)
     {
         // feu orange1
         SDL_SetRenderDrawColor(renderer, 255, 127, 40, 255);
@@ -28,7 +28,7 @@ int feu_de_signalisation1(SDL_Renderer *renderer, int x, int y, int h, int l, in
         SDL_RenderPresent(renderer);
         p1++;
     }
-    else if (p1 > 20 & p1 <= 35)
+    else if (p1 > 20 & p1 <= 36)
     {
         // feu rouge1
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
