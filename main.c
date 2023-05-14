@@ -144,14 +144,13 @@ int main(int argc, char *argv[])
         }
         while (1)
         {
-
             feu_de_signalisation(renderer, 219, 1);
             feu_de_signalisation(renderer, 1, 1);
             feu_de_signalisation(renderer, 1, 280);
             feu_de_signalisation(renderer, 219, 280);
         }
 
-
+ 
     }
     SDL_FreeSurface(surface);
     SDL_FreeSurface(cadre1);
