@@ -734,13 +734,13 @@ void load_carte(SDL_Renderer *renderer,
     // SDL_RenderFillRect(renderer, &bfbp);
 
     SDL_RenderPresent(renderer);
-    SDL_FreeSurface(surface);
-    SDL_FreeSurface(cadre1);
-    SDL_FreeSurface(cadre2);
-    SDL_FreeSurface(cadre3);
-    SDL_FreeSurface(cadre4);
-    SDL_DestroyTexture(texture2);
-    SDL_DestroyTexture(texture3);
-    SDL_DestroyTexture(texture4);
-    SDL_DestroyTexture(texture5);
+    // SDL_FreeSurface(surface);
+    // SDL_FreeSurface(cadre1);
+    // SDL_FreeSurface(cadre2);
+    // SDL_FreeSurface(cadre3);
+    // SDL_FreeSurface(cadre4);
+    // SDL_DestroyTexture(texture2);
+    // SDL_DestroyTexture(texture3);
+    // SDL_DestroyTexture(texture4);
+    // SDL_DestroyTexture(texture5);
 }

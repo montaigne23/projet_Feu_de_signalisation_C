@@ -22,15 +22,25 @@ void voiture_(SDL_Renderer *renderer,
         // return EXIT_FAILURE;
     }
     SDL_Rect parc;
-    parc.x = 0;
-    parc.y = 0;
+    parc.x = x;
+    parc.y = y;
 
-    if (SDL_QueryTexture(texture, NULL, NULL, &parc.w, &parc.h) != 0)
+    if (SDL_QueryTexture(texture, NULL, NULL, &parc.h, &parc.w) != 0)
     {
         fprintf(stderr, "erreur query : %s", SDL_GetError());
         // return EXIT_FAILURE;
     }
+    parc.h = 140;
+    parc.w = 180;
 
+    if (SDL_RenderCopy(renderer, texture, NULL, &parc) != 0)
+    {
+        fprintf(stderr, "erreur copy : %s", SDL_GetError());
+        //  return EXIT_FAILURE;
+    }
+
+
+    // SDL_DestroyTexture(texture);
+    // SDL_FreeSurface(cadre);
     SDL_RenderPresent(renderer);
-
 }

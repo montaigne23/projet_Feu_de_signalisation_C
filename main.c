@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
     printf("%d", pui);
     SDL_Window *window = NULL;
-    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture=NULL, *cadre4 = NULL;
+    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture = NULL, *cadre4 = NULL;
     SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV = NULL;
     size_t G;
     SDL_Renderer *renderer = NULL;
@@ -126,8 +126,8 @@ int main(int argc, char *argv[])
                texture5);
 
     /*******************************************************************************************************************************************/
-    // int *d1 = 0;
-    // int *d2 = 0;
+    int d1 = -40;
+    int d2 = 430;
     SDL_bool u = SDL_TRUE;
     while (u)
     {
@@ -145,13 +145,26 @@ int main(int argc, char *argv[])
                 break;
             }
         }
-        voiture_(renderer, 100, 100, voiture, testureV, 0,0,0,0);
+
+        voiture_(renderer, d1, d2, 0, voiture, testureV, 0, 0, 0);
+
         feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55);
         feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55);
         feu_de_signalisation2(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0);
         feu_de_signalisation2(renderer, 219, 280, 90, 30, 0, 0, 0, 0, 0, 0);
+        d1 += 20;
         SDL_Delay(1000);
-        
+            load_carte(renderer,
+               surface,
+               cadre1,
+               cadre2,
+               cadre3,
+               cadre4,
+               texture2,
+               texture3,
+               texture4,
+               texture5);
+
         // d1++;
         // d2++;
     }
