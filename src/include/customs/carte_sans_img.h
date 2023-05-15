@@ -1,0 +1,436 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+
+
+
+
+
+void load_cart_not_img(SDL_Renderer *renderer){
+
+
+
+    
+    SDL_Rect rect = {0, 350, 1200, 190};
+    SDL_SetRenderDrawColor(renderer, 130, 130, 130, 255);
+    SDL_RenderFillRect(renderer, &rect);
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rect1 = {470, 0, 190, 800};
+    SDL_SetRenderDrawColor(renderer, 130, 130, 130, 255);
+    SDL_RenderFillRect(renderer, &rect1);
+    // rectangle du trotoire de la route gauche
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect2 = {0, 301, 469, 49};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect2);
+    // trotoire de la route droit
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect3 = {250, 300, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect3);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectm = {0, 541, 469, 49};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectm);
+    // rectangle du trotoire de la route droite
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rects = {661, 541, 1200, 49};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rects);
+    // trotoire de la route droite
+
+    // trotoire2 droit
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rect65 = {661, 301, 1200, 49};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect65);
+    // fin trotoire
+
+    // passage pieton du haut
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect35 = {480, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect35);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect36 = {500, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect36);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect37 = {520, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect37);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect38 = {540, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect38);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect39 = {560, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect39);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect40 = {580, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect40);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect41 = {600, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect41);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect42 = {620, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect42);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect43 = {640, 290, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect43);
+    // passage pieton du bas de la route horizontale
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect45 = {480, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect45);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect47 = {500, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect47);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect48 = {520, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect48);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect49 = {540, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect49);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect50 = {560, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect50);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect51 = {580, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect51);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect52 = {600, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect52);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect53 = {620, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect53);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect54 = {640, 550, 10, 50};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect54);
+    // route des pietons de la route de son extremite droite
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect56 = {664, 360, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect56);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect57 = {664, 380, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect57);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect58 = {664, 400, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect58);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect59 = {664, 420, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect59);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect60 = {664, 440, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect60);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect61 = {664, 460, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect61);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect62 = {664, 480, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect62);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect63 = {664, 500, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect63);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect64 = {664, 520, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect64);
+
+    // passage des pietons de la route gauche
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect26 = {400, 400, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect26);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect27 = {400, 420, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect27);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect28 = {400, 440, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect28);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect29 = {400, 460, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect29);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect30 = {400, 480, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect30);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect31 = {400, 500, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect31);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect32 = {400, 520, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect32);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect33 = {400, 380, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect33);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rect34 = {400, 360, 50, 10};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect34);
+
+    // trait du trotoire droit
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectxlux = {450, 540, 10, 49};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectxlux);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectlrx = {560, 10, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectlrx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectljx = {560, 50, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectljx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectljtx = {560, 90, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectljtx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rectltjx = {560, 130, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectltjx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect rechtljx = {560, 170, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rechtljx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect raectljx = {560, 210, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &raectljx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect r = {560, 250, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &r);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect x = {560, 610, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &x);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect jx = {560, 650, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &jx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect ljx = {560, 690, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &ljx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect tljx = {560, 730, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &tljx);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect ctljx = {560, 770, 5, 30};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &ctljx);
+
+    // rectangle trotoire de la route verticale droit
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rectpol = {416, 0, 53, 350};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectpol);
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rect1m = {416, 541, 53, 700};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect1m);
+    // rectangle du trotoire de la route verticale du cot� droit
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rect1mt = {661, 545, 54, 700};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect1mt);
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect rectLOL = {661, 0, 54, 300};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rectLOL);
+
+    // separation de la route horizontale
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx22 = {5, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx22);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx222 = {45, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx222);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx223 = {85, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx223);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx224 = {125, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx224);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx225 = {165, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx225);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx226 = {205, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx226);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx227 = {245, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx227);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx228 = {285, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx228);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx229 = {325, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx229);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx2l2 = {365, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx2l2);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx322 = {715, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx322);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx3322 = {755, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx3322);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx242 = {795, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx242);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx282 = {835, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx282);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx252 = {875, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx252);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx262 = {915, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx262);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx272 = {955, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx272);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx292 = {995, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx292);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx2232 = {1035, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx2232);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx2322 = {1075, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx2322);
+
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_Rect xxx2342 = {1115, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &xxx2342);
+
+    SDL_Rect GO = {1155, 445, 30, 5};
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &GO);
+
+}

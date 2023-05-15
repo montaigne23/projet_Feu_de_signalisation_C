@@ -8,7 +8,7 @@ void voiture_(SDL_Renderer *renderer,
               int y,
               int status,
               SDL_Surface *cadre,
-              SDL_Texture *texture, int x_feu, int y_feu, int etat_feu)
+              SDL_Texture *texture, int x_feu, int y_feu, int etat_feu, int h, int w)
 {
     if (cadre == NULL)
     {
@@ -30,8 +30,8 @@ void voiture_(SDL_Renderer *renderer,
         fprintf(stderr, "erreur query : %s", SDL_GetError());
         // return EXIT_FAILURE;
     }
-    parc.h = 140;
-    parc.w = 180;
+    parc.h = h;
+    parc.w = w;
 
     if (SDL_RenderCopy(renderer, texture, NULL, &parc) != 0)
     {
@@ -39,8 +39,10 @@ void voiture_(SDL_Renderer *renderer,
         //  return EXIT_FAILURE;
     }
 
-
-    // SDL_DestroyTexture(texture);
-    // SDL_FreeSurface(cadre);
     SDL_RenderPresent(renderer);
+    texture = NULL;
+    cadre = NULL;
+    renderer = NULL;
+    SDL_DestroyTexture(texture);
+    SDL_FreeSurface(cadre);
 }

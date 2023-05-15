@@ -8,6 +8,7 @@
         "test.h": "c",
         "carte.h": "c",
         "feu_de_signalisation.h": "c",
-        "voiture.h": "c"
+        "voiture.h": "c",
+        "carte_sans_img.h": "c"
     }
 }

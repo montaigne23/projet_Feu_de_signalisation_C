@@ -19,162 +19,6 @@ void load_carte(SDL_Renderer *renderer,
     SDL_SetRenderDrawColor(renderer, 130, 130, 130, 255);
     SDL_RenderFillRect(renderer, &rect);
 
-    SDL_Point point[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-    size_t i = 0;
-    for (i = 0; i <= 1200; i++)
-    {
-        point[i].x = i;
-        point[i].y = 350;
-    }
-    SDL_RenderDrawPoints(renderer, point, 1200);
-
-    SDL_Point point2[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-    size_t j = 0;
-    for (j = 0; j <= 1200; j++)
-    {
-        point2[j].x = j;
-        point2[j].y = 540;
-    }
-    /*SDL_RenderDrawPoints(renderer,point2,1200);*/
-
-    SDL_Point point3[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-    size_t s = 0;
-    for (s = 0; s <= 350; s++)
-    {
-        point2[s].x = 469;
-        point2[s].y = s;
-    }
-
-    SDL_RenderDrawPoints(renderer, point2, 1200);
-
-    SDL_Point point4[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t v = 0;
-    for (v = 0; v <= 350; v++)
-    {
-        point4[v].x = 660;
-        point4[v].y = v;
-    }
-    SDL_RenderDrawPoints(renderer, point4, 1200);
-
-    SDL_Point point5[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t w = 541;
-    for (w = 541; w <= 800; w++)
-    {
-        point5[w].x = 469;
-        point5[w].y = w;
-    }
-
-    SDL_RenderDrawPoints(renderer, point5, 1200);
-
-    SDL_Point point6[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t z = 541;
-    for (z = 541; z <= 800; z++)
-    {
-        point6[z].x = 660;
-        point6[z].y = z;
-    }
-    SDL_RenderDrawPoints(renderer, point6, 1200);
-
-    SDL_Point point7[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t l = 0;
-    for (l = 0; l <= 600; l++)
-    {
-        point7[l].x = l;
-        point7[l].y = 300;
-    }
-    // ligne du trotoire droit
-    SDL_RenderDrawPoints(renderer, point7, 1200);
-
-    SDL_Point point8[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t m = 650;
-    for (m = 650; m <= 1200; m++)
-    {
-        point8[m].x = m;
-        point8[m].y = 300;
-    }
-
-    SDL_RenderDrawPoints(renderer, point8, 1200);
-
-    // ligne du trotoire droit dessous
-
-    SDL_Point point9[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t d = 650;
-    for (d = 650; d <= 1200; d++)
-    {
-        point9[d].x = d;
-        point9[d].y = 590;
-    }
-
-    SDL_RenderDrawPoints(renderer, point9, 1200);
-    // ligne du trotoir du bas
-
-    SDL_Point point10[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t g = 0;
-    for (g = 0; g <= 600; g++)
-    {
-        point10[g].x = g;
-        point10[g].y = 590;
-    }
-
-    SDL_RenderDrawPoints(renderer, point10, 1200);
-    // ligne du trotoire du bas a gauche
-    SDL_Point point11[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t k = 543;
-    for (k = 541; k <= 1200; k++)
-    {
-        point11[k].x = 415;
-        point11[k].y = k;
-    }
-
-    SDL_RenderDrawPoints(renderer, point11, 1200);
-
-    SDL_Point point12[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t h = 543;
-    for (h = 541; h <= 1200; h++)
-    {
-        point12[h].x = 715;
-        point12[h].y = h;
-    }
-
-    SDL_RenderDrawPoints(renderer, point12, 1200);
-    // ligne gauche  de la route en haut
-    SDL_Point point13[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t p = 0;
-    for (p = 0; p <= 300; p++)
-    {
-        point13[p].x = 415;
-        point13[p].y = p;
-    }
-
-    SDL_RenderDrawPoints(renderer, point13, 1200);
-    // ligne droite de la route en haut
-    SDL_Point point14[1200];
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    size_t a = 0;
-    for (a = 0; a <= 300; a++)
-    {
-        point14[a].x = 715;
-        point14[a].y = a;
-    }
-
-    SDL_RenderDrawPoints(renderer, point14, 1200);
-
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_Rect rect1 = {470, 0, 190, 800};
     SDL_SetRenderDrawColor(renderer, 130, 130, 130, 255);
@@ -634,7 +478,6 @@ void load_carte(SDL_Renderer *renderer,
         fprintf(stderr, "erreur texture : %s", SDL_GetError());
         // return EXIT_FAILURE;
     }
-
     SDL_Rect maison;
     maison.x = 710;
     maison.y = 0;
@@ -713,27 +556,37 @@ void load_carte(SDL_Renderer *renderer,
         // return EXIT_FAILURE;
     }
 
-    // // grand feu 1
-    // SDL_Rect dff = {441, 261, 30, 90};
-    // SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    // SDL_RenderFillRect(renderer, &dff);
+    // grand feu 1
+    SDL_Rect dff = {441, 261, 30, 90};
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderFillRect(renderer, &dff);
 
-    // // grand feu 2
-    // SDL_Rect bfbf = {441, 540, 30, 90};
-    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    // SDL_RenderFillRect(renderer, &bfbf);
+    // grand feu 2
+    SDL_Rect bfbf = {441, 540, 30, 90};
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_RenderFillRect(renderer, &bfbf);
 
-    // // grand feu 3
-    // SDL_Rect bfba = {660, 540, 30, 90};
-    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    // SDL_RenderFillRect(renderer, &bfba);
+    // grand feu 3
+    SDL_Rect bfba = {660, 540, 30, 90};
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_RenderFillRect(renderer, &bfba);
 
-    // // grand feu 4
-    // SDL_Rect bfbp = {660, 261, 30, 90};
-    // SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
-    // SDL_RenderFillRect(renderer, &bfbp);
+    // grand feu 4
+    SDL_Rect bfbp = {660, 261, 30, 90};
+    SDL_SetRenderDrawColor(renderer, 173, 173, 173, 255);
+    SDL_RenderFillRect(renderer, &bfbp);
 
     SDL_RenderPresent(renderer);
+    surface = NULL;
+    cadre1 = NULL;
+    cadre1 = NULL;
+    cadre1 = NULL;
+    cadre1 = NULL;
+    texture2 = NULL;
+    texture2 = NULL;
+    texture2 = NULL;
+    texture2 = NULL;
+    renderer = NULL;
     // SDL_FreeSurface(surface);
     // SDL_FreeSurface(cadre1);
     // SDL_FreeSurface(cadre2);
@@ -743,4 +596,5 @@ void load_carte(SDL_Renderer *renderer,
     // SDL_DestroyTexture(texture3);
     // SDL_DestroyTexture(texture4);
     // SDL_DestroyTexture(texture5);
+    // SDL_DestroyRenderer(renderer);
 }

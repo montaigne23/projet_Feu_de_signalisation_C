@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <customs/test.h>
 #include <customs/carte.h>
+#include <customs/carte_sans_img.h>
 #include <customs/voiture.h>
 #include <customs/feu_de_signalisation1.h>
 #include <customs/feu_de_signalisation2.h>
@@ -18,8 +19,8 @@ int main(int argc, char *argv[])
 {
     printf("%d", pui);
     SDL_Window *window = NULL;
-    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture = NULL, *cadre4 = NULL;
-    SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV = NULL;
+    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture = NULL, *voiture1 = NULL, *voiture2 = NULL, *voiture3 = NULL,*voiture4 = NULL,*cadre4 = NULL;
+    SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV, *testureV1 = NULL;
     size_t G;
     SDL_Renderer *renderer = NULL;
 
@@ -114,6 +115,10 @@ int main(int argc, char *argv[])
     cadre3 = SDL_LoadBMP("image/arbre.bmp");
     cadre4 = SDL_LoadBMP("image/hopit.bmp");
     voiture = SDL_LoadBMP("image/img4.bmp");
+    voiture1 = SDL_LoadBMP("image/img44.bmp");
+    voiture2 = SDL_LoadBMP("image/img5.bmp");
+    voiture3 = SDL_LoadBMP("image/img11.bmp");
+    voiture4 = SDL_LoadBMP("image/img111.bmp");
     load_carte(renderer,
                surface,
                cadre1,
@@ -126,8 +131,18 @@ int main(int argc, char *argv[])
                texture5);
 
     /*******************************************************************************************************************************************/
+    SDL_bool isV2 = SDL_FALSE;
+    
+    // voiture 1
     int d1 = -40;
     int d2 = 430;
+    // voiture 3
+    int d5 = -40;
+    int d6 = 430;
+
+    // voiture 2
+    int d3 = 425;
+    int d4 = 30;
     SDL_bool u = SDL_TRUE;
     while (u)
     {
@@ -145,28 +160,73 @@ int main(int argc, char *argv[])
                 break;
             }
         }
+        if (d1 <= 430)
+        {
+            voiture_(renderer, d1, d2, 0, voiture, testureV, 0, 0, 0, 140, 180);
+        }
+        else
+        {
+            voiture_(renderer, d1, d2, 0, voiture1, testureV1, 0, 0, 0, 180, 140);
+        }
 
-        voiture_(renderer, d1, d2, 0, voiture, testureV, 0, 0, 0);
+        if (isV2)
+        {
+        
+            if (d5 <= 430)
+            {
+                voiture_(renderer, d5, d6, 0, voiture3, testureV, 0, 0, 0, 140, 180);
+            }
+            else
+            {
+                voiture_(renderer, d5, d6, 0, voiture4, testureV1, 0, 0, 0, 180, 140);
+            }
+        }
 
-        feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55);
-        feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55);
-        feu_de_signalisation2(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0);
-        feu_de_signalisation2(renderer, 219, 280, 90, 30, 0, 0, 0, 0, 0, 0);
-        d1 += 20;
+        voiture_(renderer, d3, d4, 0, voiture2, testureV1, 0, 0, 0, 180, 180);
+
+        feu_de_signalisation2(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0, 1);
+        feu_de_signalisation2(renderer, 219, 280, 90, 30, 0, 0, 0, 0, 0, 0, 0);
+        feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55, 1);
+        feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55, 0);
+
+        if (d1 <= 430)
+        {
+            d1 += 20;
+        }
+        else if (d2 <= 700)
+        {
+            isV2 = SDL_TRUE;
+            d2 += 30;
+        }
+        else
+        {
+            d2 = 430;
+            d1 = -40;
+        }
+
+        if (isV2)
+        {
+            if (d5 <= 430)
+            {
+                d5 += 20;
+            }
+            else if (d6 <= 700)
+            {
+                d6 += 30;
+            }
+            else
+            {
+                d6 = 430;
+                d5 = -40;
+            }
+        }
+
         SDL_Delay(1000);
-            load_carte(renderer,
-               surface,
-               cadre1,
-               cadre2,
-               cadre3,
-               cadre4,
-               texture2,
-               texture3,
-               texture4,
-               texture5);
-
-        // d1++;
-        // d2++;
+        // if (d1 <= 410 || d2 <= 700)
+        // {
+        load_cart_not_img(renderer); // }
+                                     // d1++;
+                                     // d2++;
     }
     SDL_FreeSurface(surface);
     SDL_FreeSurface(cadre1);
