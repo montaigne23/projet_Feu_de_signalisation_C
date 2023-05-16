@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-
+/*
+*/
 void voiture_(SDL_Renderer *renderer,
               int x,
               int y,
@@ -40,9 +41,10 @@ void voiture_(SDL_Renderer *renderer,
     }
 
     SDL_RenderPresent(renderer);
+    // SDL_DestroyTexture(texture);
+    // SDL_FreeSurface(cadre);
     texture = NULL;
     cadre = NULL;
     renderer = NULL;
-    SDL_DestroyTexture(texture);
-    SDL_FreeSurface(cadre);
+  //  SDL_RenderClear(renderer);
 }
