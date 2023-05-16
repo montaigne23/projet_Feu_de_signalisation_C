@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV, *testureV1 = NULL;
     size_t G;
     SDL_Renderer *renderer = NULL;
+    SDL_Renderer *renderer1 = NULL;
 
     int statut = EXIT_FAILURE;
 
@@ -71,21 +72,6 @@ int main(int argc, char *argv[])
 
         fprintf(stderr, "Erreur SDL_CreateTexture: %s", SDL_GetError());
 
-    /*on cr�� 4 carr�s pour notre feu*/
-    struct carre carre[4] = {
-
-        {{4, 4, 10, 10}, SDL_MapRGB(surface->format, 0, 0, 0)},        /*NOIR*/
-        {{4, 18, 10, 10}, SDL_MapRGB(surface->format, 255, 0, 0)},     /*bleu*/
-        {{18, 4, 10, 10}, SDL_MapRGB(surface->format, 0, 255, 0)},     /*vert*/
-        {{18, 18, 10, 10}, SDL_MapRGB(surface->format, 255, 127, 40)}, /*blanc*/
-    };
-    // on remplit notre surface grace a nos carres
-    for (G = 0; G < 4; G++)
-    {
-        SDL_FillRect(surface, &carre[G].rect, carre[G].couleur);
-        SDL_SetWindowIcon(window, surface);
-    }
-    // innitialisation de SDL_image:
     if (IMG_Init(IMG_INIT_PNG) < 0)
     {
         printf("ERReur lors de l'initialisation de SDL_image:%s\n", IMG_GetError());
@@ -110,16 +96,18 @@ int main(int argc, char *argv[])
 
     // Mix_PlayMusic(son1, -1); // lecture du son
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
-    cadre1 = SDL_LoadBMP("image/PARC.bmp");
-    cadre2 = SDL_LoadBMP("image/maison2.bmp");
-    cadre3 = SDL_LoadBMP("image/arbre.bmp");
-    cadre4 = SDL_LoadBMP("image/hopit.bmp");
-    voiture = SDL_LoadBMP("image/img4.bmp");
-    voiture1 = SDL_LoadBMP("image/img44.bmp");
-    voiture2 = SDL_LoadBMP("image/img5.bmp");
-    voiture3 = SDL_LoadBMP("image/img11.bmp");
-    voiture4 = SDL_LoadBMP("image/img111.bmp");
-    load_carte(renderer,
+    cadre1 = IMG_Load("image/locol.jpg");
+    cadre2 = IMG_Load("image/maison2.jpg");
+    cadre3 = IMG_Load("image/arbre.jpg");
+    cadre4 = IMG_Load("image/hopit.jpg");
+    voiture = IMG_Load("image/img/img4.png");
+    voiture1 = IMG_Load("image/img/img44.png");
+    voiture2 = IMG_Load("image/img/img5.png");
+    voiture3 = IMG_Load("image/img/img11.png");
+    voiture4 = IMG_Load("image/img/img111.png");
+    /*******************************************************************************************************************************************/
+    
+        load_carte(renderer,
                surface,
                cadre1,
                cadre2,
@@ -130,7 +118,6 @@ int main(int argc, char *argv[])
                texture4,
                texture5);
 
-    /*******************************************************************************************************************************************/
     SDL_bool isV2 = SDL_FALSE;
     SDL_bool isBlockFront = SDL_FALSE;
 
@@ -161,10 +148,16 @@ int main(int argc, char *argv[])
                 break;
             }
         }
+<<<<<<< HEAD
         /*
             si d1 qui represente la position x de la voiture et qui est ajoute de 30 pixel chaque seconde
             est inferieur ou egale a 430 pixel on affiche la voiture 1 qui se deplace horizotalement
         */
+=======
+
+
+        
+>>>>>>> 33be766fc39311d3166ea713056b4f454f14816e
         if (d1 <= 430)
         {
             voiture_(renderer, d1, d2, 0, voiture, testureV, 0, 0, 0, 140, 180);
@@ -384,9 +377,18 @@ int main(int argc, char *argv[])
         SDL_Delay(1000);
         // if (d1 <= 410 || d2 <= 700)
         // {
-        load_cart_not_img(renderer); // }
+            
+         load_cart_not_img(renderer); // }
                                      // d1++;
-                                     // d2++;
+         // SDL_RenderClear(renderer);
+    //      SDL_FreeSurface(voiture3);
+    //      SDL_FreeSurface(voiture4);
+    //      SDL_FreeSurface(voiture);
+    //      SDL_FreeSurface(voiture1);
+    //      SDL_FreeSurface(voiture2);
+    //  SDL_DestroyTexture(testureV1);
+    //  SDL_DestroyTexture(testureV);
+                            // d2++;
     }
     SDL_FreeSurface(surface);
     SDL_FreeSurface(cadre1);

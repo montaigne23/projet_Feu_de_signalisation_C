@@ -3,15 +3,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+void load_cart_not_img(SDL_Renderer *renderer)
+{
 
-
-
-
-void load_cart_not_img(SDL_Renderer *renderer){
-
-
-
-    
     SDL_Rect rect = {0, 350, 1200, 190};
     SDL_SetRenderDrawColor(renderer, 130, 130, 130, 255);
     SDL_RenderFillRect(renderer, &rect);
@@ -433,4 +427,7 @@ void load_cart_not_img(SDL_Renderer *renderer){
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderFillRect(renderer, &GO);
 
+    SDL_RenderPresent(renderer);
+    renderer = NULL;
+    //    SDL_RenderClear(renderer);
 }
