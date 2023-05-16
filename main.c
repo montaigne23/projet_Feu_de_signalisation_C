@@ -278,7 +278,7 @@ int main(int argc, char *argv[])
             {
                 if (d1 >= 65)
                 {
-                    // rien la voiture 1 reste stable
+                     // rien la voiture 1 reste stable
                     isBlockFront = SDL_TRUE;
                 }
                 if (d5 == 240)
