@@ -161,46 +161,88 @@ int main(int argc, char *argv[])
                 break;
             }
         }
+        /*
+            si d1 qui represente la position x de la voiture et qui est ajoute de 30 pixel chaque seconde
+            est inferieur ou egale a 430 pixel on affiche la voiture 1 qui se deplace horizotalement
+        */
         if (d1 <= 430)
         {
             voiture_(renderer, d1, d2, 0, voiture, testureV, 0, 0, 0, 140, 180);
         }
+        /*
+            si d1 qui represente la position x de la voiture et qui est ajoute de 30 pixel chaque seconde
+            est supperieur ou egale a 430 pixel on affiche la voiture 1 qui se deplace verticament
+        */
         else
         {
             voiture_(renderer, d1, d2, 0, voiture1, testureV1, 0, 0, 0, 180, 140);
         }
 
+        /*
+            isV2 est bool qui va permettre d'ajouter le voiture 2 dans la course
+        */
         if (isV2)
         {
-
+            /*
+                si d1 qui represente la position x de la voiture et qui est ajoute de 30 pixel chaque seconde
+                est inferieur ou egale a 430 pixel on affiche la voiture 2 qui se deplace horizotalement
+            */
             if (d5 <= 430)
             {
                 voiture_(renderer, d5, d6, 0, voiture3, testureV, 0, 0, 0, 140, 180);
             }
+            /*
+                si d1 qui represente la position x de la voiture et qui est ajoute de 30 pixel chaque seconde
+                est inferieur ou egale a 430 pixel on affiche la voiture 2 qui se deplace horizotalement
+            */
+
             else
             {
                 voiture_(renderer, d5, d6, 0, voiture4, testureV1, 0, 0, 0, 180, 140);
             }
         }
 
+        /*
+            ici represente la voiture 3
+        */
         voiture_(renderer, d3, d4, 0, voiture2, testureV1, 0, 0, 0, 180, 180);
 
+        /*
+            feu 2 et 3
+        */
         feu_de_signalisation2(renderer, 1, 1, 90, 30, 0, 0, 0, 0, 0, 0, 1);
         feu_de_signalisation2(renderer, 219, 280, 90, 30, 0, 0, 0, 0, 0, 0, 0);
+
+        /*
+            feu 1 et 4
+        */
         feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55, 1);
         feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55, 0);
 
         // V1
+        /*
+            isBlockFront est un bool qui verifie si la voiture 1 se trouve derrrier la voiture 2
+            au moment ou la voiture 2 est blocke ppar le feu au rouge
+        */
         if (!isBlockFront)
         {
+            /*
+                ici avec (p1_ > 20 && p1_ <= 35) qui signifie que p1 appartient a ]20, 35] et indique le feu au rouge
+                p1 represente le compteur de feu 2
+                donc on verifie si le compteur de feu est au rouge 
+            */
             if (p1_ > 20 && p1_ <= 35)
             {
+                /*
+                    on verifie si la position x de la voiture 1 est egale a 250 pixel c a d sur le bout du passage pieton gauche
+                */
                 if (d1 == 250)
                 {
-                    // rien la voiture 1 reste stable
+                    // si la condition est verifie la voiture 1 reste stable
                 }
                 else
                 {
+                    //sinon voiture 1 peut continuer a avancer
                     if (d1 <= 430)
                     {
                         d1 += 20;
@@ -219,6 +261,9 @@ int main(int argc, char *argv[])
             }
             else
             {
+                /*
+                    dans le cas contraire il peut traverser le feu car c'est soit au vert ou orange 
+                */
                 if (d1 <= 430)
                 {
                     d1 += 20;
@@ -237,16 +282,25 @@ int main(int argc, char *argv[])
         }
 
         // V3
+            /*
+                ici avec (p2_ > 20 && p2_ <= 35) qui signifie que p2 appartient a ]20, 35] et indique le feu au rouge
+                p1 represente le compteur de feu 2
+                donc on verifie si le compteur de feu est au rouge 
+            */
 
         if (p2_ > 20 && p2_ <= 35)
         {
+                 /*
+                    on verifie si la position x de la voiture 3 est egale a 250 pixel c a d sur le bout du passage pieton gauche
+                */
+
             if (d4 == 150)
             {
-                /* code */
+              // si la condition est verifie la voiture 1 reste stable
             }
             else
             {
-
+             //sinon voiture 3 peut continuer a avancer
                 if (d4 <= 700)
                 {
                     d4 += 30;
@@ -260,6 +314,10 @@ int main(int argc, char *argv[])
         }
         else
         {
+                            /*
+                    dans le cas contraire il peut traverser le feu car c'est soit au vert ou orange 
+                */
+
             if (d4 <= 700)
             {
                 d4 += 30;
@@ -270,6 +328,8 @@ int main(int argc, char *argv[])
                 d4 = 0;
             }
         }
+
+        
         // V2
 
         if (isV2)
@@ -278,7 +338,7 @@ int main(int argc, char *argv[])
             {
                 if (d1 >= 65)
                 {
-                     // rien la voiture 1 reste stable
+                    // rien la voiture 1 reste stable
                     isBlockFront = SDL_TRUE;
                 }
                 if (d5 == 240)
