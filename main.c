@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
     printf("%d", pui);
     SDL_Window *window = NULL;
-    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture = NULL, *voiture1 = NULL, *voiture2 = NULL, *voiture3 = NULL,*voiture4 = NULL,*cadre4 = NULL;
+    SDL_Surface *surface, *cadre1, *cadre2, *cadre3, *voiture = NULL, *voiture1 = NULL, *voiture2 = NULL, *voiture3 = NULL, *voiture4 = NULL, *cadre4 = NULL;
     SDL_Texture *texture = NULL, *texture2 = NULL, *texture3 = NULL, *texture4 = NULL, *texture5 = NULL, *testureV, *testureV1 = NULL;
     size_t G;
     SDL_Renderer *renderer = NULL;
@@ -119,17 +119,18 @@ int main(int argc, char *argv[])
                texture5);
 
     SDL_bool isV2 = SDL_FALSE;
-    
+    SDL_bool isBlockFront = SDL_FALSE;
+
     // voiture 1
     int d1 = -40;
     int d2 = 430;
-    // voiture 3
+    // voiture 2
     int d5 = -40;
     int d6 = 430;
 
-    // voiture 2
+    // voiture 3
     int d3 = 425;
-    int d4 = 30;
+    int d4 = 0;
     SDL_bool u = SDL_TRUE;
     while (u)
     {
@@ -161,7 +162,7 @@ int main(int argc, char *argv[])
 
         if (isV2)
         {
-        
+
             if (d5 <= 430)
             {
                 voiture_(renderer, d5, d6, 0, voiture3, testureV, 0, 0, 0, 140, 180);
@@ -179,35 +180,134 @@ int main(int argc, char *argv[])
         feu_de_signalisation1(renderer, 219, 60, 30, 80, 0, 0, 25, -25, 50, -55, 1);
         feu_de_signalisation1(renderer, -60, 280, 30, 80, 0, 0, 25, -25, 50, -55, 0);
 
-        if (d1 <= 430)
+        // V1
+        if (!isBlockFront)
         {
-            d1 += 20;
-        }
-        else if (d2 <= 700)
-        {
-            isV2 = SDL_TRUE;
-            d2 += 30;
-        }
-        else
-        {
-            d2 = 430;
-            d1 = -40;
-        }
-
-        if (isV2)
-        {
-            if (d5 <= 430)
+            if (p1_ > 20 && p1_ <= 35)
             {
-                d5 += 20;
-            }
-            else if (d6 <= 700)
-            {
-                d6 += 30;
+                if (d1 == 250)
+                {
+                    // rien la voiture 1 reste stable
+                }
+                else
+                {
+                    if (d1 <= 430)
+                    {
+                        d1 += 20;
+                    }
+                    else if (d2 <= 700)
+                    {
+                        isV2 = SDL_TRUE;
+                        d2 += 30;
+                    }
+                    else
+                    {
+                        d2 = 430;
+                        d1 = -40;
+                    }
+                }
             }
             else
             {
-                d6 = 430;
-                d5 = -40;
+                if (d1 <= 430)
+                {
+                    d1 += 20;
+                }
+                else if (d2 <= 700)
+                {
+                    isV2 = SDL_TRUE;
+                    d2 += 30;
+                }
+                else
+                {
+                    d2 = 430;
+                    d1 = -40;
+                }
+            }
+        }
+
+        // V3
+
+        if (p2_ > 20 && p2_ <= 35)
+        {
+            if (d4 == 150)
+            {
+                /* code */
+            }
+            else
+            {
+
+                if (d4 <= 700)
+                {
+                    d4 += 30;
+                }
+                else
+                {
+                    d3 = 425;
+                    d4 = 0;
+                }
+            }
+        }
+        else
+        {
+            if (d4 <= 700)
+            {
+                d4 += 30;
+            }
+            else
+            {
+                d3 = 425;
+                d4 = 0;
+            }
+        }
+        // V2
+
+        if (isV2)
+        {
+            if (p1_ > 20 && p1_ <= 35)
+            {
+                if (d1 >= 65)
+                {
+                     // rien la voiture 1 reste stable
+                    isBlockFront = SDL_TRUE;
+                }
+                if (d5 == 240)
+                {
+                }
+                else
+                {
+                    isBlockFront = SDL_FALSE;
+                    if (d5 <= 430)
+                    {
+                        d5 += 20;
+                    }
+                    else if (d6 <= 700)
+                    {
+                        d6 += 30;
+                    }
+                    else
+                    {
+                        d6 = 430;
+                        d5 = -40;
+                    }
+                }
+            }
+            else
+            {
+                isBlockFront = SDL_FALSE;
+                if (d5 <= 430)
+                {
+                    d5 += 20;
+                }
+                else if (d6 <= 700)
+                {
+                    d6 += 30;
+                }
+                else
+                {
+                    d6 = 430;
+                    d5 = -40;
+                }
             }
         }
 
